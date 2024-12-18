@@ -37,9 +37,7 @@ export default function RootLayout({
             <body
                 className={`${montserratRegular.variable}  ${montserratExtraBold.variable} ${montserratBold.variable} antialiased`}
             >
-                <Header />
                 {children}
-                <Footer />
             </body>
         </html>
     )

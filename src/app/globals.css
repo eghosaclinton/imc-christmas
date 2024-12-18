@@ -4,6 +4,7 @@
 
 body {
   margin: 0;
+  font-family: var(--font-montserrat-regular);
   max-width: 1024px;
   margin: 0 auto;
   padding: 0;
@@ -19,6 +20,10 @@ body {
 
 .logo{
   padding: 1rem 1rem 0rem;
+}
+
+#count--down{
+  font-family: var(--font-montserrat-bold), sans-serif;
 }
 
 @layer utilities {

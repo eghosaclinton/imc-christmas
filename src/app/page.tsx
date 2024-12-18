@@ -1,10 +1,17 @@
 'use client'
-import Image from 'next/image'
+import ChristmasSurprise from "./components/ChristmasSurprise"
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export default function Home() {
     return (
-        <main>
-            
-        </main>
-    )
+        <>
+            <Header />
+            <main>
+                <ChristmasSurprise />
+            </main>
+            <Footer />       
+        </>
+       
+    );
 }

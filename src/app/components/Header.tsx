@@ -1,5 +1,4 @@
 'use client'
-import { motion } from 'motion/react'
 import ChristmasLights from '../svg/ChristmasLights'
 
 export default function Header() {
@@ -19,7 +18,7 @@ export default function Header() {
 
     return (
         <header className="flex-col flex">
-            <a href='https://www.irowamedicalcentre.com/'  className="logo flex">
+            <a target='_blank' href='https://www.irowamedicalcentre.com/'  className="logo flex">
                 <h2 className='flex flex-col leading-8'>
                     <span className='icon--top-text text-green-700 text-[2.75rem] font-extrabold '>Irowa</span>
                     <span className='icon--bottom-text font-bold text-[1.125rem] tracking-normal'>Medical Centre</span>
