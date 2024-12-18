@@ -2,22 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.icon--top-text{
+  font-family: var(--font-montserrat-extrabold), sans-serif;
+}
+
+.icon--bottom-text{
+  font-family: var(--font-montserrat-bold), sans-serif;
+}
+
+.logo{
+  padding: 1rem 1rem 0rem;
 }
 
 @layer utilities {
