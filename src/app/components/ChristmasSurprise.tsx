@@ -4,8 +4,7 @@ import Image from 'next/image'
 import imcImg from '../assets/company-picture.jpeg'
 import { motion } from 'motion/react'
 
-function PartyPaper({ color, x, y }: { color: string; x: number; y: number }) {
-    const colorClass = `bg-[${color}]`
+function PartyPaper({ x, y }: { color: string; x: number; y: number }) {
 
     return (
         <motion.span

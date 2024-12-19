@@ -24,6 +24,7 @@ export default function Header() {
                 <Image
                     className="w-full max-w-[55px]"
                     src={companyLogo}
+                    priority={true}
                     alt="Irowa Medical Center's Logo"
                 />
                 <div className="company--name self-end">

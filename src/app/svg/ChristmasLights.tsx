@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'motion/react'
+import { motion } from 'motion/react'
 
 export default function ChristmasLights() {
     const [viewportWidth, setViewportWidth] = useState(window.innerWidth)
@@ -21,7 +21,7 @@ export default function ChristmasLights() {
     }, [])
 
     return (
-        <AnimatePresence>
+        <div className='inline-block'>
             <svg
                 height="100%"
                 width="100%"
@@ -180,6 +180,6 @@ export default function ChristmasLights() {
 	C397.243,161.862,333.963,170.659,255.995,170.659z"
                 />
             </svg>
-        </AnimatePresence>
+        </div>
     )
 }
