@@ -4,24 +4,21 @@ import { motion } from 'motion/react'
 
 export default function ChristmasLights() {
     const [viewportWidth, setViewportWidth] = useState(window.innerWidth)
-    // const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
 
     useEffect(() => {
         const handleResize = () => {
             setViewportWidth(window.innerWidth)
-            // setViewportHeight(window.innerHeight);
         }
 
         window.addEventListener('resize', handleResize)
 
-        // Cleanup the event listener on component unmount
         return () => {
             window.removeEventListener('resize', handleResize)
         }
     }, [])
 
     return (
-        <div className='inline-block'>
+        <div className="inline-block">
             <svg
                 height="100%"
                 width="100%"

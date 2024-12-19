@@ -5,7 +5,6 @@ import imcImg from '../assets/company-picture.jpeg'
 import { motion } from 'motion/react'
 
 function PartyPaper({ x, y }: { color: string; x: number; y: number }) {
-
     return (
         <motion.span
             className={`bg-[#ED5564] min-w-8 h-2`}
