@@ -56,6 +56,10 @@ export default function Home() {
             <AnimatePresence>
                 {!isCounted && (
                     <motion.h1
+                        key="modal"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
                         id="count--down"
                         className="text-white top-0 left-0 flex w-full justify-center z-[99] items-center text-[5rem] absolute min-h-[100svh]"
                     >

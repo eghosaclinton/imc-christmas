@@ -13,7 +13,7 @@ export default function ChristmasSurprise({
         <motion.div className="">
             {isCounted && (
                 <motion.div id="the--surprise" className="">
-                    <motion.p
+                    <motion.div
                         id="seasons--greetings"
                         className="p-4 flex flex-col gap-4"
                         initial={{ scale: 0, opacity: 0 }}
@@ -25,7 +25,8 @@ export default function ChristmasSurprise({
                         </h1>
                         <Suspense fallback={<h1>Loading</h1>}>
                             <Image
-                                className="rounded-lg"
+                                priority={true}
+                                className="rounded-lg mx-auto w-full max-w-[800px]"
                                 src={imcImg}
                                 alt="Irowa Medical Center"
                             />
@@ -44,7 +45,7 @@ export default function ChristmasSurprise({
                             <br />✨ Warm wishes from all of us at Irowa Medical
                             Center!
                         </p>
-                    </motion.p>
+                    </motion.div>
                 </motion.div>
             )}
         </motion.div>
