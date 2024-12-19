@@ -21,7 +21,11 @@ export default function Header() {
                 href="https://www.irowamedicalcentre.com/"
                 className="logo flex items-center gap-2"
             >
-                <Image className='w-full max-w-[55px]' src={companyLogo} alt="Irowa Medical Center's Logo" />
+                <Image
+                    className="w-full max-w-[55px]"
+                    src={companyLogo}
+                    alt="Irowa Medical Center's Logo"
+                />
                 <div className="company--name self-end">
                     <h2 className="flex flex-col leading-8">
                         <span className="icon--top-text text-green-700 text-[2.75rem] font-extrabold ">

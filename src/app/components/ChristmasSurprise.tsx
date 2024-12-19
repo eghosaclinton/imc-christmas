@@ -4,22 +4,18 @@ import Image from 'next/image'
 import imcImg from '../assets/company-picture.jpeg'
 import { motion } from 'motion/react'
 
-
-
-function PartyPaper({color, x, y}: {color: string, x: number, y: number}){
+function PartyPaper({ color, x, y }: { color: string; x: number; y: number }) {
     const colorClass = `bg-[${color}]`
 
-    return(
-        <motion.span 
+    return (
+        <motion.span
             className={`bg-[#ED5564] min-w-8 h-2`}
-            initial={{x: 0, y: 0, opacity: 0, scale: 0}}
-            animate={{x, y, opacity: 1, scale: 1}}
-            transition={{duration: 5}}
-        >
-        </motion.span>
+            initial={{ x: 0, y: 0, opacity: 0, scale: 0 }}
+            animate={{ x, y, opacity: 1, scale: 1 }}
+            transition={{ duration: 5 }}
+        ></motion.span>
     )
 }
-
 
 export default function ChristmasSurprise({
     isCounted,
@@ -31,7 +27,7 @@ export default function ChristmasSurprise({
             {isCounted && (
                 <motion.div id="the--surprise" className="">
                     <div className="pleasant--surprise">
-                        <PartyPaper color='#ED5564' x={0} y={0} />
+                        <PartyPaper color="#ED5564" x={0} y={0} />
                     </div>
                     <motion.div
                         id="seasons--greetings"
@@ -66,7 +62,6 @@ export default function ChristmasSurprise({
                             Center!
                         </p>
                     </motion.div>
-                    
                 </motion.div>
             )}
         </motion.div>
