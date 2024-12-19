@@ -7,8 +7,8 @@ import {
     useTransform,
     animate,
 } from 'motion/react'
-import Image from 'next/image'
-import christmasTreeImg from './assets/christmas-decoration-pine-svgrepo-com.svg'
+// import Image from 'next/image'
+// import christmasTreeImg from './assets/christmas-decoration-pine-svgrepo-com.svg'
 import ChristmasSurprise from './components/ChristmasSurprise'
 import Header from './components/Header'
 import Footer from './components/Footer'
