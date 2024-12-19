@@ -1,10 +1,30 @@
 'use client'
-
-import { motion } from 'motion/react'
+import { useState, useEffect } from 'react';
+import { motion } from 'motion/react';
 
 export default function ChristmasLights() {
+    const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+    const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
+  
+    useEffect(() => {
+      const handleResize = () => {
+        setViewportWidth(window.innerWidth);
+        setViewportHeight(window.innerHeight);
+      };
+  
+      window.addEventListener('resize', handleResize);
+  
+      // Cleanup the event listener on component unmount
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
+
+
     return (
         <svg
+            height={viewportWidth < 768 ? 0.1*viewportHeight: 0.165*viewportHeight}
+            width={viewportWidth < 768 ? 0.1*viewportWidth: 0.3*viewportWidth}
             version="1.1"
             id="Layer_1"
             xmlns="http://www.w3.org/2000/svg"
