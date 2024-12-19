@@ -41,9 +41,9 @@ export default function ChristmasSurprise() {
         {isCounted && 
         <motion.h1 
         id="count--down"
-        className = "bg-[#ED5564] text-white top-0 flex w-full justify-center z-99 items-center text-[5rem] absolute min-h-[100svh]"
+        className = "bg-[#ED5564] text-white top-0 flex w-full justify-center z-[99] items-center text-[5rem] absolute min-h-[100svh]"
         >
-            {rounded}
+            {rounded && rounded}
         </motion.h1>}
     </motion.div>
     )
