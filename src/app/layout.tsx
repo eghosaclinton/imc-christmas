@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Head from 'next/head'
 import localFont from 'next/font/local'
 import './globals.css'
 
@@ -22,6 +21,14 @@ export const metadata: Metadata = {
     title: 'Seasons Greetings from IMC',
     description:
         'From the Staff and Management Of Irowa Medical Center, Wishing our Customers a Merry Christmas and a Happy New Year',
+    openGraph:{
+        title: "Season’s Greetings from Irowa Medical Center! 🎄",
+        description: "From the Staff and Management Of Irowa Medical Center, Wishing our Customers a Merry Christmas and a Happy New Year",
+        images: "https://imc-christmas.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcompany-picture.f3607e38.jpeg&w=3840&q=75",
+        url: "https://imc-christmas.vercel.app/",
+        type: "website",
+        locale: "en_US "
+    }
 }
 
 export default function RootLayout({
@@ -31,21 +38,6 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <Head>
-                <meta property="og:title" content="Season’s Greetings from Irowa Medical Center! 🎄" />
-                <meta
-                    property="og:description"
-                    content="From the Staff and Management Of Irowa Medical Center, Wishing our Customers a Merry Christmas and a Happy New Year"
-                />
-                <meta
-                    property="og:image"
-                    
-                    content="https://imc-christmas.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcompany-picture.f3607e38.jpeg&w=3840&q=75"
-                />
-                <meta property="og:url" content="https://imc-christmas.vercel.app/" />
-                <meta property="og:type" content="website" />
-                <meta property="og:locale" content="en_US" />
-            </Head>
             <body
                 className={`text-center ${montserratRegular.variable}  ${montserratExtraBold.variable} ${montserratBold.variable} antialiased`}
             >
