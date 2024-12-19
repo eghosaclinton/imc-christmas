@@ -8,16 +8,14 @@ const montserratRegular = localFont({
 })
 
 const montserratExtraBold = localFont({
-  src: './fonts/Montserrat-Full-Version/Web Fonts/Montserrat/Montserrat-ExtraBold.woff',
-  variable: '--font-montserrat-extrabold',
+    src: './fonts/Montserrat-Full-Version/Web Fonts/Montserrat/Montserrat-ExtraBold.woff',
+    variable: '--font-montserrat-extrabold',
 })
 
 const montserratBold = localFont({
-  src: './fonts/Montserrat-Full-Version/Web Fonts/Montserrat/Montserrat-Bold.woff',
-  variable: '--font-montserrat-bold',
+    src: './fonts/Montserrat-Full-Version/Web Fonts/Montserrat/Montserrat-Bold.woff',
+    variable: '--font-montserrat-bold',
 })
-
-
 
 export const metadata: Metadata = {
     title: 'Seasons Greetings from IMC',
@@ -33,7 +31,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${montserratRegular.variable}  ${montserratExtraBold.variable} ${montserratBold.variable} antialiased`}
+                className={`text-center ${montserratRegular.variable}  ${montserratExtraBold.variable} ${montserratBold.variable} antialiased`}
             >
                 {children}
             </body>

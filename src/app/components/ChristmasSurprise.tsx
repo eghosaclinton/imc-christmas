@@ -1,50 +1,52 @@
 'use client'
-import { useEffect, useState} from "react"
-import { motion, useMotionValue, useTransform, animate } from "motion/react"
+import { Suspense } from 'react'
+import Image from 'next/image'
+import imcImg from '../assets/company-picture.jpeg'
+import { motion } from 'motion/react'
 
-export default function ChristmasSurprise() {
-  const [isCounted, setIsCounted] = useState(true)
-  const count = useMotionValue(3);
-  const rounded = useTransform(count, Math.round);
-
-  useEffect(() => {
-    const animation = animate(count, 0, {
-         duration: 8,
-         type: "spring",
-         onUpdate: (latest)=>{
-            switch (Math.round(latest)) {
-                case 3:
-                    document.getElementById('count--down')!.style.backgroundColor = '#ED5564'
-                    break;
-                case 2:
-                    document.getElementById('count--down')!.style.backgroundColor = '#FFCE54'
-                    break;
-                case 1:
-                    document.getElementById('count--down')!.style.backgroundColor = '#A0D468'
-                    break;  
-                case 0:
-                    setIsCounted(false)
-                    break;  
-                default:
-                    
-                    break;
-            }
-         }
-        });
-
-    return animation.stop;
-  }, []);
-
-
-  return (
-    <motion.div className="">
-        {isCounted && 
-        <motion.h1 
-        id="count--down"
-        className = "bg-[#ED5564] text-white top-0 left-0 flex w-full justify-center z-[99] items-center text-[5rem] absolute min-h-[100svh]"
-        >
-            {rounded && rounded}
-        </motion.h1>}
-    </motion.div>
+export default function ChristmasSurprise({
+    isCounted,
+}: {
+    isCounted: boolean
+}) {
+    return (
+        <motion.div className="">
+            {isCounted && (
+                <motion.div id="the--surprise" className="">
+                    <motion.p
+                        id="seasons--greetings"
+                        className="p-4 flex flex-col gap-4"
+                        initial={{ scale: 0, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 5, type: 'spring' }}
+                    >
+                        <h1 className="text-[3rem] max-md:text-[2rem]">
+                            Season’s Greetings from Irowa Medical Center! 🎄
+                        </h1>
+                        <Suspense fallback={<h1>Loading</h1>}>
+                            <Image
+                                className="rounded-lg"
+                                src={imcImg}
+                                alt="Irowa Medical Center"
+                            />
+                        </Suspense>
+                        <p className="text-[1.25rem] max-md:text-[1rem]">
+                            As we celebrate this festive season, we want to
+                            express our heartfelt gratitude for your support
+                            throughout the year. Your trust means the world to
+                            us, and we’re honored to have been part of your
+                            journey. <br />
+                            <br />
+                            Wishing you a joyful Christmas filled with love and
+                            laughter, and a New Year that brings you endless
+                            opportunities, success, and happiness. Let’s make
+                            2025 extraordinary together! <br />
+                            <br />✨ Warm wishes from all of us at Irowa Medical
+                            Center!
+                        </p>
+                    </motion.p>
+                </motion.div>
+            )}
+        </motion.div>
     )
 }

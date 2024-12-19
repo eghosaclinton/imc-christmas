@@ -13,24 +13,39 @@ export default function ChristmasLights() {
             xmlSpace="preserve"
         >
             <motion.path
-                initial={{fill: '#CCD1D9'}}
-                animate={{fill: '#ED5564'}}
-                transition={{duration: 1, delay: .125, repeat: Infinity, type: "tween"}}
+                initial={{ fill: '#CCD1D9' }}
+                animate={{ fill: '#ED5564' }}
+                transition={{
+                    duration: 1,
+                    delay: 0.125,
+                    repeat: Infinity,
+                    type: 'tween',
+                }}
                 d="M213.332,320.007c0-41.248,19.101-74.678,42.663-74.678s42.656,33.43,42.656,74.678
 	c0,41.234-19.094,74.655-42.656,74.655S213.332,361.241,213.332,320.007z"
             />
             <motion.path
-                initial={{fill: '#CCD1D9'}}
-                animate={{fill: '#FFCE54'}}
-                transition={{duration: 1, delay: .25, repeat: Infinity, type: "tween"}}
+                initial={{ fill: '#CCD1D9' }}
+                animate={{ fill: '#FFCE54' }}
+                transition={{
+                    duration: 1,
+                    delay: 0.25,
+                    repeat: Infinity,
+                    type: 'tween',
+                }}
                 d="M107.108,305.133c5.773-40.835-8.461-76.616-31.796-79.912
 	c-23.328-3.297-46.921,27.124-52.694,67.975c-5.766,40.827,8.469,76.592,31.796,79.889
 	C77.749,376.381,101.343,345.96,107.108,305.133z"
             />
             <motion.path
-                initial={{fill: '#CCD1D9'}}
-                animate={{fill: '#A0D468'}}
-                transition={{duration: 1, delay: .5, repeat: Infinity, type: "tween" }}
+                initial={{ fill: '#CCD1D9' }}
+                animate={{ fill: '#A0D468' }}
+                transition={{
+                    duration: 1,
+                    delay: 0.5,
+                    repeat: Infinity,
+                    type: 'tween',
+                }}
                 d="M404.883,305.133c-5.766-40.835,8.453-76.616,31.796-79.912
 	c23.328-3.297,46.922,27.124,52.687,67.975c5.781,40.827-8.468,76.592-31.78,79.889C434.241,376.381,410.648,345.96,404.883,305.133
 	z"
