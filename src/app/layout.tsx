@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Head from 'next/head'
 import localFont from 'next/font/local'
 import './globals.css'
 
@@ -30,7 +31,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <head>
+            <Head>
                 <meta property="og:title" content="Season’s Greetings from Irowa Medical Center! 🎄" />
                 <meta
                     property="og:description"
@@ -44,7 +45,7 @@ export default function RootLayout({
                 <meta property="og:url" content="https://imc-christmas.vercel.app/" />
                 <meta property="og:type" content="website" />
                 <meta property="og:locale" content="en_US" />
-            </head>
+            </Head>
             <body
                 className={`text-center ${montserratRegular.variable}  ${montserratExtraBold.variable} ${montserratBold.variable} antialiased`}
             >
