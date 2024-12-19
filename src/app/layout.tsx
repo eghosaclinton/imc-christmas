@@ -33,10 +33,12 @@ export default function RootLayout({
             <head>
                 <meta property="og:title" content="Season’s Greetings from Irowa Medical Center! 🎄" />
                 <meta
-                    property="From the Staff and Management Of Irowa Medical Center, Wishing our Customers a Merry Christmas and a Happy New Year"
+                    property="og:description"
+                    content="From the Staff and Management Of Irowa Medical Center, Wishing our Customers a Merry Christmas and a Happy New Year"
                 />
                 <meta
                     property="og:image"
+                    
                     content="https://imc-christmas.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcompany-picture.f3607e38.jpeg&w=3840&q=75"
                 />
                 <meta property="og:url" content="https://imc-christmas.vercel.app/" />
