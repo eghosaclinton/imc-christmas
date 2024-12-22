@@ -26,8 +26,9 @@ export default function Home() {
     partyPapers = partyPapers.map((ele, i) =>{
         const colorIndex = Math.floor(Math.random()*3);
         const transform = Math.floor(Math.random()*180);
+        const y = Math.floor(Math.random()*50);
 
-        return <PartyPaper key={i} transform={`rotate(${transform}deg)`} color={colorArr[colorIndex]}  />
+        return <PartyPaper key={i} transform={`rotate(${transform}deg)`} y={-y} color={colorArr[colorIndex]}  />
     })
 
     useEffect(() => {
@@ -81,7 +82,7 @@ export default function Home() {
             </AnimatePresence>
             {isCounted && (
                 <>  
-                    <div className="part--papers flex gap-8">
+                    <div className="part--papers absolute flex-wrap flex gap-12">
                         {partyPapers}
                     </div>
                     <Header />

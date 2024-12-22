@@ -1,9 +1,14 @@
 'use client'
-// import { motion } from 'motion/react'
+import { motion } from 'motion/react'
 
-export default function PartyPaper({color, transform}: {color: string, transform: string}) {
+export default function PartyPaper({color, transform, y}: {color: string, transform: string, y: number}) {
     return (
-        <div>
+        <motion.div
+            className='z-50'
+            initial={{y, opacity: 1}}
+            animate={{y: 1500, opacity: 0}}
+            transition={{duration: 20}}
+        >
             <svg
                 className='absolute'
                 style={{
@@ -26,6 +31,6 @@ export default function PartyPaper({color, transform}: {color: string, transform
                     <g id="Capa_1_45_"></g>
                 </g>
             </svg>
-        </div>
+        </motion.div>
     )
 }
