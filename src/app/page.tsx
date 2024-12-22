@@ -7,8 +7,7 @@ import {
     useTransform,
     animate,
 } from 'motion/react'
-// import Image from 'next/image'
-// import christmasTreeImg from './assets/christmas-decoration-pine-svgrepo-com.svg'
+import PartyPaper from './svg/PartyPaper'
 import ChristmasSurprise from './components/ChristmasSurprise'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -17,6 +16,19 @@ export default function Home() {
     const [isCounted, setIsCounted] = useState(false)
     const count = useMotionValue(3)
     const rounded = useTransform(count, Math.round)
+    const colorArr = ['#ED5564', '#FFCE54', '#A0D468']
+    let partyPapers = []
+
+    for (let i = 0; i < 30; i++) {
+        partyPapers.push(i+1);        
+    }
+
+    partyPapers = partyPapers.map((ele, i) =>{
+        const colorIndex = Math.floor(Math.random()*3);
+        const transform = Math.floor(Math.random()*180);
+
+        return <PartyPaper key={i} transform={`rotate(${transform}deg)`} color={colorArr[colorIndex]}  />
+    })
 
     useEffect(() => {
         const animation = animate(count, 0, {
@@ -68,22 +80,13 @@ export default function Home() {
                 )}
             </AnimatePresence>
             {isCounted && (
-                <>
+                <>  
+                    <div className="part--papers flex gap-8">
+                        {partyPapers}
+                    </div>
                     <Header />
                     <main>
                         <ChristmasSurprise isCounted={isCounted} />
-                        {/* <motion.button
-                            className="fixed rounded-full p-4 flex justify-center items-center w-28 bottom-12 right-12 max-md:right-0 max-md:bottom-20"
-                            // whileHover={{scale: 1.1}}
-                            whileTap={{ scale: 0.75 }}
-                            transition={{ duration: 2, type: 'spring' }}
-                        >
-                            <Image
-                                className="w-full"
-                                src={christmasTreeImg}
-                                alt="chrismas tree image"
-                            />
-                        </motion.button> */}
                     </main>
                     <Footer />
                 </>

@@ -9,6 +9,7 @@ html{
 ::-webkit-scrollbar {
   height: 5px;
   width: 5px;
+  
   background: slategrey;
 }
 

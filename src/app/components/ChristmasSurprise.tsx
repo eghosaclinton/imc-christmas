@@ -4,17 +4,6 @@ import Image from 'next/image'
 import imcImg from '../assets/company-picture.jpeg'
 import { motion } from 'motion/react'
 
-function PartyPaper({ x, y }: { color: string; x: number; y: number }) {
-    return (
-        <motion.span
-            className={`bg-[#ED5564] min-w-8 h-2`}
-            initial={{ x: 0, y: 0, opacity: 0, scale: 0 }}
-            animate={{ x, y, opacity: 1, scale: 1 }}
-            transition={{ duration: 5 }}
-        ></motion.span>
-    )
-}
-
 export default function ChristmasSurprise({
     isCounted,
 }: {
@@ -24,9 +13,7 @@ export default function ChristmasSurprise({
         <motion.div className="">
             {isCounted && (
                 <motion.div id="the--surprise" className="">
-                    <div className="pleasant--surprise">
-                        <PartyPaper color="#ED5564" x={0} y={0} />
-                    </div>
+                    <div className="pleasant--surprise"></div>
                     <motion.div
                         id="seasons--greetings"
                         className="p-4 flex flex-col gap-4"
