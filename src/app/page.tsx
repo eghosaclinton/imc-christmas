@@ -20,15 +20,22 @@ export default function Home() {
     let partyPapers = []
 
     for (let i = 0; i < 30; i++) {
-        partyPapers.push(i+1);        
+        partyPapers.push(i + 1)
     }
 
-    partyPapers = partyPapers.map((ele, i) =>{
-        const colorIndex = Math.floor(Math.random()*3);
-        const transform = Math.floor(Math.random()*180);
-        const y = Math.floor(Math.random()*50);
+    partyPapers = partyPapers.map((ele, i) => {
+        const colorIndex = Math.floor(Math.random() * 3)
+        const transform = Math.floor(Math.random() * 180)
+        const y = Math.floor(Math.random() * 50)
 
-        return <PartyPaper key={i} transform={`rotate(${transform}deg)`} y={-y} color={colorArr[colorIndex]}  />
+        return (
+            <PartyPaper
+                key={i}
+                transform={`rotate(${transform}deg)`}
+                y={-y}
+                color={colorArr[colorIndex]}
+            />
+        )
     })
 
     useEffect(() => {
@@ -81,7 +88,7 @@ export default function Home() {
                 )}
             </AnimatePresence>
             {isCounted && (
-                <>  
+                <>
                     <div className="part--papers absolute flex-wrap flex gap-12">
                         {partyPapers}
                     </div>
