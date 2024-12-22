@@ -10,6 +10,7 @@
     "format": "prettier \"src/app/**/*.{js,jsx,ts,tsx,mjs,cjs,json}\" --write"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.4.1",
     "motion": "^11.15.0",
     "next": "14.2.18",
     "prettier": "^3.4.2",
