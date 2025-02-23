@@ -1,18 +1,36 @@
 'use client'
 import Image from 'next/image'
+import { useWindowSize } from 'react-use'
 import companyLogo from '@/app/assets/IMC Redesigned logo.png'
 import ChristmasLights from '../svg/ChristmasLights'
 
 export default function Header() {
-    let christmasLights = []
+    const { width } = useWindowSize()
+    
 
-    for (let i = 0; i < 11; i++) {
-        christmasLights.push(i + 1)
+    const getLights = (width: number) => {
+        let christmasLights: number[] | React.ReactNode[] = []
+
+        if (width < 768){
+            for (let i = 0; i < 11; i++) {
+                christmasLights.push(i + 1)
+            }
+        }else if (width < 1024){
+            for (let i = 0; i < 13; i++) {
+                christmasLights.push(i + 1)
+            }
+        }else{
+            for (let i = 0; i < 15; i++) {
+                christmasLights.push(i + 1)
+            }
+        }
+
+        christmasLights = christmasLights.map((e, index) => {
+            return <ChristmasLights key={index} />
+        })
+
+        return christmasLights
     }
-
-    christmasLights = christmasLights.map((e) => {
-        return <ChristmasLights key={e} />
-    })
 
     return (
         <header className="flex-col flex">
@@ -40,7 +58,7 @@ export default function Header() {
             </a>
 
             <div className="christmas--lights overflow-hidden">
-                <div className="lights flex ">{christmasLights}</div>
+                <div className="lights flex ">{getLights(width)}</div>
             </div>
         </header>
     )

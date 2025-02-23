@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
+import Confetti from './components/Confetti'
 import {
     motion,
     AnimatePresence,
@@ -7,7 +8,6 @@ import {
     useTransform,
     animate,
 } from 'motion/react'
-import PartyPaper from './svg/PartyPaper'
 import ChristmasSurprise from './components/ChristmasSurprise'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -16,27 +16,6 @@ export default function Home() {
     const [isCounted, setIsCounted] = useState(false)
     const count = useMotionValue(3)
     const rounded = useTransform(count, Math.round)
-    const colorArr = ['#ED5564', '#FFCE54', '#A0D468']
-    let partyPapers = []
-
-    for (let i = 0; i < 30; i++) {
-        partyPapers.push(i + 1)
-    }
-
-    partyPapers = partyPapers.map((ele, i) => {
-        const colorIndex = Math.floor(Math.random() * 3)
-        const transform = Math.floor(Math.random() * 180)
-        const y = Math.floor(Math.random() * 50)
-
-        return (
-            <PartyPaper
-                key={i}
-                transform={`rotate(${transform}deg)`}
-                y={-y}
-                color={colorArr[colorIndex]}
-            />
-        )
-    })
 
     useEffect(() => {
         const animation = animate(count, 0, {
@@ -69,7 +48,7 @@ export default function Home() {
         })
 
         return animation.stop
-    }, [])
+    }, [count])
 
     return (
         <>
@@ -90,7 +69,7 @@ export default function Home() {
             {isCounted && (
                 <>
                     <div className="part--papers absolute flex-wrap flex gap-12">
-                        {partyPapers}
+                        <Confetti />
                     </div>
                     <Header />
                     <main>
